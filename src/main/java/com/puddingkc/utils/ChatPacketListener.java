@@ -36,7 +36,7 @@ public class ChatPacketListener implements PacketListener {
                 return;
             }
 
-            sendDebugMessage("触发消息事件: " + message);
+            sendDebugMessage("Triggered message event: " + message);
         }
     }
 
@@ -51,7 +51,7 @@ public class ChatPacketListener implements PacketListener {
         if (player != null) {
             runCommand(message, player);
         }
-        sendDebugMessage("消息已被拦截: " + message);
+        sendDebugMessage("Message intercepted: " + message);
         event.setCancelled(true);
     }
 
@@ -61,7 +61,7 @@ public class ChatPacketListener implements PacketListener {
             for (String command : commands) {
                 plugin.getServer().getScheduler().runTask(plugin, () -> {
                     plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), replacePlaceholder(command, message, player));
-                    sendDebugMessage("执行命令: " + replacePlaceholder(command, message, player));
+                    sendDebugMessage("Executing command: " + replacePlaceholder(command, message, player));
                 });
             }
         }

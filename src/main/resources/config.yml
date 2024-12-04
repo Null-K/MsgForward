@@ -1,14 +1,14 @@
-# 输出控制台调试日志
+# Console debug log output
 debug: false
 
-# 匹配的消息关键字
+# Matching message keywords
 messages:
-  - "&e的游戏模式被设置为"
-  # 使用 # 开头的字符串将被视为正则表达式
-  # 正则表达式内的颜色代码需要使用 §
-  # 下方表达式代表包含 hello 关键词的消息
+  - "&e's game mode has been set to"
+  # Strings starting with # will be treated as regular expressions
+  # Color codes within regular expressions need to use §
+  # The following expression matches messages containing the keyword hello
   - "#^.*hello.*$"
 
-# 拦截后执行的命令
+# Commands executed after interception
 commands:
   - "say {player} {message}"

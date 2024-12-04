@@ -30,9 +30,9 @@ public class MainCommands implements CommandExecutor, TabCompleter {
                         if (args.length >= 2) {
                             String testText = args[1].replaceAll("&", "§");
                             if (testText(testText)) {
-                                sendMessage(sender,"文本 " + testText + "§f 符合规则");
+                                sendMessage(sender, "Text " + testText + "§f matches the rules");
                             } else {
-                                sendMessage(sender,"文本 " + testText + "§f 不符合规则");
+                                sendMessage(sender, "Text " + testText + "§f does not match the rules");
                             }
                         } else {
                             sendHelp(sender);
@@ -77,14 +77,14 @@ public class MainCommands implements CommandExecutor, TabCompleter {
     }
 
     private void sendHelp(CommandSender sender) {
-        sendMessage(sender, "指令帮助");
-        sender.sendMessage("§f/mf reload §8- §7重新加载配置文件");
-        sender.sendMessage("§f/mf test <文本> §8- §7测试指定文本是否符合规则");
+        sendMessage(sender, "Command help");
+        sender.sendMessage("§f/mf reload §8- §7Reload configuration file");
+        sender.sendMessage("§f/mf test <text> §8- §7Test if the specified text matches the rules");
     }
 
     private void reloadMainConfig(CommandSender sender) {
         plugin.loadConfig();
-        sendMessage(sender,"配置文件重载完成");
+        sendMessage(sender,"Configuration file reloaded");
     }
 
 }

@@ -59,7 +59,7 @@ public class MsgForward extends JavaPlugin {
                     Pattern pattern = Pattern.compile(message.substring(1).trim());
                     regexPatterns.add(pattern);
                 } catch (Exception e) {
-                    getLogger().warning("无效的正则表达式: " + message.substring(1).trim());
+                    getLogger().warning("Invalid regular expression: " + message.substring(1).trim());
                 }
             } else {
                 messages.add(message.replace("&", "§"));
